@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        h1 + h2 {
+            background-color: #00aa00;
+        }
+        h1 ~ h2{
+            font-size: 40px;
+        }
+
+        p::first-line{
+            font-style: oblique;
+            font-size: 30px;
+            display:inline;
+        }
+
+        p::first-letter{
+            font-size: 50px;
+        }
+
+        p::selection{
+            background-color: #0000aa;
+        }
+
+        p:nth-child(1){
+            font-size:50px;
+        }
+
+        a:empty{
+            color: red;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Selectores</title>
+</head>
+<body>
+<h1>Hola</h1>
+<h2>Hola</h2>
+<div>
+    <h2>Hola</h2>
+</div>
+<h2>HOla</h2>
+
+<p>
+    jdsahflasjñfdljasñldfjklsafdñlkaslkdfjañlksdjfñlk
+    JSADÑLKJDlkasjdlkjsadJjfdkfjkdjkfjkdjfjdkfdkfkdjfkjd
+</p>
+
+<div>
+    <p>Hola</p>
+    <p>Hola</p>
+</div>
+
+
+</body>
+</html>
