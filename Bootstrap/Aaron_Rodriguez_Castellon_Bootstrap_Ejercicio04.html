@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <title>Hello, world!</title>
+</head>
+<style type="text/css">
+
+    div{
+        min-height:50px;
+        text-align: center;
+    }
+
+
+    div[class*="col-"]{
+        min-height:75px;
+    }
+
+    .borde-blanco{
+        border-style:solid;
+        border-width: 1px;
+        border-color: #fff;
+    }
+
+    .verde{
+        background-color: #00FF2D;
+    }
+
+    .azul{
+        background-color: #7FA3D8;
+    }
+
+    .gris{
+        background-color: #C6C6C6;
+    }
+
+    .cian{
+        background-color: #00FFFE;
+    }
+
+    .naranja{
+        background-color: #FF8A53;
+    }
+
+    #footer{
+        min-height:25px;
+    }
+
+</style>
+
+<body>
+
+<div class="container">
+
+    <div class="row verde borde-blanco">Header</div>
+    <div class="row borde-blanco">
+        <div class="col-lg-3 col-md-3 col-6 offset-md-3 azul borde-blanco">1</div>
+        <div class="col-lg-3 col-md-3 col-6 azul borde-blanco">2</div>
+        <div class="col-lg-3 col-md-3 d-none d-md-block"></div>
+        <div class="col-lg-3 col-md-3 col-6 azul borde-blanco">3</div>
+        <div class="col-lg-3 col-md-3 col-6 offset-md-6 azul borde-blanco">4</div>
+    </div>
+
+    <div class="row d-none d-sm-block d-md-none d-xs-none cian borde-blanco">Tablet</div>
+
+    <div class="row borde-blanco">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-6 order-md-4 order-sm-1 gris borde-blanco">a</div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-6 order-md-3 order-sm-2 gris borde-blanco">b</div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-6 order-md-2 order-sm-3 gris borde-blanco">c</div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-6 order-md-1 order-sm-4 gris borde-blanco">d</div>
+    </div>
+
+    <div class="row cian borde-blanco d-none d-md-block d-lg-block">Desktop</div>
+    <div class="row cian borde-blanco d-block d-sm-none">Mobile</div>
+    <div class="row borde-blanco">
+        <div class="col-lg-3 col-md-3 offset-md-3 col-sm-6 d-none d-sm-block naranja borde-blanco">:(</div>
+        <div class="col-lg-3 col-md-3 col-sm-6 naranja borde-blanco">:D</div>
+    </div>
+    <div class="row verde borde-blanco d-none d-sm-block" id="footer">Footer</div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+</body>
+</html>
