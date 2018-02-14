@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <style>
+        .container{
+            width: 100%;
+            height: 300px;
+            border: black;
+            border-style: solid;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div class="container">
+
+</div>
+
+<div class="card a1" id="arrastrable" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Esto es una carta</h5>
+        <p class="card-text">Ejemplo de soltable</p>
+    </div>
+
+
+
+
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+    $("#arrastrable").draggable({
+        cursor: "pointer",
+        start: function() { $(this).css("background-color","#f44336"); },
+        stop: function() { $(this).css("background-color","#008CBA"); }
+    });
+    $(".container").droppable({
+        drop: function() { $(this).html("El elemento se ha soltado"); },
+        over: function() { $(this).html("El elemento esta dentro"); },
+        out: function() { $(this).html("El elemento esta fuera"); },
+        accept: ".a1",
+        tolerance: "fit"
+    });
+    //$("#container").droppable("disable");
+
+</script>
+</body>
+
+</html>

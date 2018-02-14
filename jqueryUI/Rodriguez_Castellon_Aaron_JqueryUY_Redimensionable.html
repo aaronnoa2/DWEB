@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <style>
+        .jumbotron{
+            padding: 0;
+        }
+
+        #container{
+            width: 100%;
+            height: 350px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="container">
+    <div class="jumbotron" id="redimensionable">
+        <h1 class="display-4">Me voy a redimensionar</h1>
+        <hr class="my-4">
+        <p>Arrastra lo que hay abajo a la derecha</p>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+    $("#redimensionable").resizable({
+        animate: true,
+        animateEasing: "easeOutBounce",
+        aspectRatio: false,
+        grid: [50,50],
+        ghost: true,
+        containment: "#container",
+        maxWidth: 800,
+        maxHeight: 300,
+        minWidth: 400,
+        minHeight: 150,
+        start: function() { $(".redimensionable").css("background-color","red"); },
+        stop: function() { $(".redimensionable").css("background-color","blue"); },
+        resize: function() { $(".redimensionable").css("background-color","yellow"); }
+
+    });
+
+</script>
+</body>
+
+</html>
