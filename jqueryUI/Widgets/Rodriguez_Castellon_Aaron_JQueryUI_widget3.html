@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+        .newClass { text-indent: 10px; letter-spacing: .4em; width: 410px; height: 120px; padding: 10px; margin: 5px; font-size: 1.1em;}
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Tabs - Default functionality</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#tabs" ).tabs({
+                heightStyle: "content"
+            });
+            $( "#button" ).on( "click", function() {
+                $( "#tabs" ).addClass( "newClass", 1000, callback );
+            });
+
+            function callback() {
+                setTimeout(function() {
+                    $( "#tabs" ).removeClass( "newClass" );
+                }, 1500 );}
+        } );
+    </script>
+</head>
+<body>
+
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs-1">Soy el primer Tab</a></li>
+        <li><a href="#tabs-2">Soy el segundo Tab</a></li>
+        <li><a href="#tabs-3">Soy el tercer Tab</a></li>
+    </ul>
+    <div id="tabs-1">
+        <p>Hola soy el primer texto del primer tab</p>
+    </div>
+    <div id="tabs-2">
+        <p>Hola soy el segundo texto del segundo tab</p>
+    </div>
+    <div id="tabs-3">
+        <p> Soy el tercer texto del tecer tab</p>
+    </div>
+</div>
+<button id="button" class="ui-state-default ui-corner-all">Añadir Efecto</button>
+
+
+</body>
+</html>

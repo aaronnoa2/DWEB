@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+      $( function() {
+          $( "#dialog" ).dialog({
+              width:500,
+              height:500
+          });
+
+          $( "#slider" ).slider({
+              range:"max",
+              min:1,
+              max:5,
+              value:3,
+              slide:contar,
+              hide: { effect: "explode", duration: 1000 }
+
+          });
+
+          $( "#menu" ).menu();
+      } );
+
+      function contar(event, ui) {
+          $("#numero").val(ui.value);
+      }
+  </script>
+</head>
+<body>
+<div id="dialog" title="Soy un dialogo">
+  <p>Soy un dialogo y esto es el primer parrafo.</p>
+
+  <p>Soy un dialogo y esto es el segundo parrafo</p>
+  <button style="margin-top: 3%" class="ui-button">A button element</button>
+</div>
+
+<p>
+  <label for="numero">Cambio de numero si me deslizas!</label>
+  <input type="text" id="numero">
+</p>
+<div id="slider"></div>
+
+<ul style="margin-top: 3%;max-width: 1300px" id="menu">
+  <li><div>Menu 1</div></li>
+  <li><div>Menu 2</div></li>
+  <li><div>Menu 3</div>
+    <ul>
+      <li><div>Sub Menu del 3</div></li>
+      <li><div>Sub menu 2 del 3</div></li>
+    </ul>
+  </li>
+  <li><div>Menu 4</div></li>
+  <li><div>Menu 5</div>
+    <ul>
+      <li><div>Sub menu del 5</div>
+        <ul>
+          <li><div>Sub menu 2 del 5 </div></li>
+          <li><div>Sub menu 3 del 5</div></li>
+        </ul>
+      </li>
+      <li><div>Sub menu 2 del 5</div></li>
+    </ul>
+  </li>
+</ul>
+
+</body>
+</html>
