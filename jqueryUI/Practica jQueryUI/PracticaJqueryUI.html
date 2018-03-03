@@ -11,8 +11,15 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="jquery-ui.structure.css">
     <link rel="stylesheet" href="jquery-ui.theme.css">
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Dosis');
+    body{
+        font-family: 'Dosis', sans-serif;
+    }
+</style>
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -45,25 +52,25 @@
                 </div>
                 <div class="form-group col-md-4">
                     <i class="fa fa-address-book-o" style="font-size:24px"></i> <label
-                        for="inputAddress">Usuario</label>
-                    <input type="text" class="form-control" id="inputAddres" placeholder="Aaron123">
+                        for="inputUsuario">Usuario</label>
+                    <input type="text" class="form-control" id="inputUsuario" placeholder="Aaron123">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <i class="fa fa-building-o" style="font-size:30px"></i> <label for="inputAddress2">Direccion</label>
-                    <input type="text" class="form-control" id="inputAdress"
+                    <i class="fa fa-building-o" style="font-size:30px"></i> <label for="inputAddres">Direccion</label>
+                    <input type="text" class="form-control" id="inputAddres"
                            placeholder="Av Ayala nº32">
                 </div>
                 <div class="form-group col-md-4">
-                    <i class="fa fa-at" style="font-size:24px"></i> <label for="inputAddress2">Email</label>
+                    <i class="fa fa-at" style="font-size:24px"></i> <label for="inputEmail">Email</label>
                     <input type="text" class="form-control" id="inputEmail"
                            placeholder="aaron@hotmail.com">
                 </div>
                 <div class="form-group col-md-4">
-                    <i class="fa fa-address-card-o" style="font-size:30px"></i> <label for="inputAddress2">DNI</label>
+                    <i class="fa fa-address-card-o" style="font-size:30px"></i> <label for="inputDni">DNI</label>
                     <input type="text" class="form-control" id="inputDNI"
-                           placeholder="18600">
+                           placeholder="75942823H">
                 </div>
             </div>
             <h3 style="padding-top: 3%;padding-bottom: 3%;padding-left: 40%">Coche</h3>
@@ -99,8 +106,15 @@
             </div>
         </form>
     </div>
+    <div id="segundoTema">
+        <button style="margin-left: 44%;margin-top: 2%" class="btn btn-primary" type="submit" href="#" id="reserva">
+            Reserva
+        </button>
+        <div id="dialog" title="Se ha hecho la reserva">Gracias por confiar en nosotros</div>
+    </div>
+
 </div>
-<div class="footer-bottom bg-primary">
+<div class="footer-bottom bg-primary" style="height: 100px">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -137,7 +151,7 @@
                     defaultDate: "+1w",
                     changeMonth: true,
                     numberOfMonths: 2,
-                    minDate: -20,
+                    minDate: 0,
                     maxDate: "+1M +20D"
                 })
                 .on("change", function () {
@@ -147,7 +161,7 @@
                 defaultDate: "+1w",
                 changeMonth: true,
                 numberOfMonths: 2,
-                minDate: -20,
+                minDate: 0,
                 maxDate: "+1M +20D"
             })
                 .on("change", function () {
@@ -164,6 +178,26 @@
 
             return date;
         }
+
+        $("#dialog").dialog({
+            autoOpen: false,
+            show: {
+                effect: "drop",
+                duration: 1000
+            },
+            hide: {
+                effect: "explode",
+                duration: 1000
+            },
+            buttons: {
+                'Aceptar': function() {
+                    $(this).dialog("close");
+                }
+            }
+        }).parents('.ui-dialog:eq(0)').wrap("<div id='segundoTema'></div>");
+        $("#reserva").click(function () {
+            $("#dialog").dialog("open");
+        });
     });
 </script>
 </body>
